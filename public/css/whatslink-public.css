@@ -2,3 +2,58 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+.whatslink {
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.whatslink-phone {
+    max-width: 300px;
+    min-height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+    padding: 35px 8px 35px 8px;
+    border-style: solid;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.whatslink-phone-head{
+    background-color: #EDEDED;
+    padding: 4%;   
+}
+.whatslink-profile{
+    width: 32px;
+    border-radius: 20px;
+}
+.whatslink-phone-body{
+    background-color: #ECE5DD;
+    min-height: 400px;
+}
+.whatslink-phone-message{
+    background-color: #DCF8C6;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
+    padding: 10px;
+    right: 10px;
+    bottom: 20px;
+    position: absolute;
+    margin: 0;
+    overflow-wrap: break-word;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.whatslink-phone-footer{
+    background-color: #EDEDED;
+    padding: 4%;   
+}
+.whatslink-phone-footer>div>input[type="text"] {
+    background-color: white;
+    border-radius: 20px;
+}
+.dashicons-controls-play{
+    font-size: 32px;
+    padding: 2%;
+    margin: 0;
+}

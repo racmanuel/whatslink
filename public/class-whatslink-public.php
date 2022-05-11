@@ -73,7 +73,8 @@ class Whatslink_Public {
 	public function enqueue_styles() {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/whatslink-public.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style( $this->plugin_name. '-simple-grid-css', plugin_dir_url( __FILE__ ) . 'css/simple-grid.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name. '-form-css', 'https://cdn.jsdelivr.net/npm/@codolog/form@1.0.0/dist/form.min.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -84,7 +85,6 @@ class Whatslink_Public {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/whatslink-public.js', array( 'jquery' ), $this->version, true );
-
 	}
 
 	/**
@@ -126,6 +126,10 @@ class Whatslink_Public {
 		 * @see https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/
 		 */
 		$out = intval( $atts['attribute'] );
+
+		ob_start();
+		include_once( 'partials/'.$this->plugin_name.'-public-display.php' );
+		return ob_get_clean();
 
 		/**
 		 * If the shortcode is enclosing, we may want to do something with $content
