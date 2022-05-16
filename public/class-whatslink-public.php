@@ -85,6 +85,7 @@ class Whatslink_Public {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/whatslink-public.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name. '-intlTelInput', plugin_dir_url( __FILE__ ) . 'js/jquery.mask.min.js', array( 'jquery' ), $this->version, true );
 	}
 
 	/**

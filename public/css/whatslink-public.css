@@ -48,9 +48,16 @@
     background-color: #EDEDED;
     padding: 4%;   
 }
-.whatslink-phone-footer>div>input[type="text"] {
+p#whatslink-phone-input {
     background-color: white;
-    border-radius: 20px;
+    width: 100%;
+    height: 32px;
+    margin: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .dashicons-controls-play{
     font-size: 32px;

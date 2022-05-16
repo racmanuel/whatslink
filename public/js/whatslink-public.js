@@ -1,4 +1,4 @@
-(function( $ ) {
+(function ($) {
 	'use strict';
 
 	/**
@@ -29,4 +29,32 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-})( jQuery );
+	$(function () {
+		//Hide Elements
+		$('p.whatslink-phone-message').hide();
+		//Initialize the jQuery Mask
+		$('#phone_region_code').mask('+00');
+		$('#phone').mask('(000) 000 0000');
+
+		//On Click in the Button of Generate Link
+		$('#generate-link').click(function () {
+			//Get the Values of the Fields
+			var phone_code = $('#phone_region_code').val();
+			var phone = $('#phone').val();
+			//Send to the Console.
+			console.log(phone_code + phone);
+		});
+		$('#phone_region_code').keyup(function () {
+			$('span.phone_code').text($(this).val());
+		});
+		$('#phone').keyup(function () {
+			$('span.phone').text($(this).val());
+		});
+		$('#greeting').keyup(function () {
+			$('#whatslink-phone-input').text($(this).val());
+			$('p.whatslink-phone-message').show();
+			$('p.whatslink-phone-message').text($('#greeting').val());
+			$('#whatslink-phone-input').val('null');
+		});
+	});
+})(jQuery);
