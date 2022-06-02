@@ -2,52 +2,92 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
-.whatslink {
-    width: 100%;
-    height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    padding: 15px;
-    border-radius: 15px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --whatslink-primary-color: #FFFFFF;
+    --whatslink-border-radius: 15px;
+    --whatslink-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    --whatslink-font-family: 'Inter', sans-serif;
 }
 
-.whatslink-phone {
-    max-width: 300px;
-    min-height: 400px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
-    padding: 35px 8px 35px 8px;
-    border-style: solid;
-    border-radius: 15px;
+.whatslink-intro {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    color: var(--whatslink-primary-color);
+    font: var(--whatslink-font-family);
+}
+
+.whatslink-intro-header {
+    color: var(--whatslink-primary-color) !important;
+    font-weight: bold;
+    font-family: var(--whatslink-font-family);
+}
+
+.whatslink-form {
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--whatslink-box-shadow);
+    border-radius: var(--whatslink-border-radius);
+    padding: 15px;
     background-color: #fff;
 }
 
-.whatslink-phone-head{
-    background-color: #EDEDED;
-    padding: 4%;   
+.whatslink-container {
+    background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+    border-radius: var(--whatslink-border-radius);
+    font-family: var(--whatslink-font-family);
 }
-.whatslink-profile{
+
+.whatslink-phone {
+    /*max-width: 300px;*/
+    height: 100%;
+    box-shadow: var(--whatslink-box-shadow);
+    padding: 35px 8px 35px 8px;
+    border-style: solid;
+    border-radius: var(--whatslink-border-radius);
+    background-color: #fff;
+}
+
+.whatslink-phone-head {
+    background-color: #EDEDED;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+.whatslink-profile {
     width: 32px;
     border-radius: 20px;
 }
-.whatslink-phone-body{
+
+.whatslink-phone-body {
     background-color: #ECE5DD;
-    min-height: 400px;
+    min-height: 380px;
 }
-.whatslink-phone-message{
+
+.whatslink-phone-message {
+    max-width: 90%;
     background-color: #DCF8C6;
-    box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, .13);
     padding: 10px;
     right: 10px;
     bottom: 20px;
     position: absolute;
     margin: 0;
-    overflow-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border-radius: 20px;
     font-size: 14px;
 }
-.whatslink-phone-footer{
+
+.whatslink-phone-footer {
     background-color: #EDEDED;
-    padding: 4%;   
+    padding: 4%;
 }
+
 p#whatslink-phone-input {
     background-color: white;
     width: 100%;
@@ -58,9 +98,57 @@ p#whatslink-phone-input {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-radius: var(--whatslink-border-radius);
 }
-.dashicons-controls-play{
+
+.dashicons-controls-play {
     font-size: 32px;
     padding: 2%;
     margin: 0;
+}
+
+#generate-link {
+    border-radius: var(--whatslink-border-radius);
+}
+
+#generate-qr {
+    border-radius: var(--whatslink-border-radius);
+}
+
+.dashicons-arrow-right-alt2 {
+    background-color: #FFFFFF;
+    border-radius: var(--whatslink-border-radius);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.whatslink-alert {
+    background-color: var(--whatslink-primary-color);
+    color: black;
+    border-radius: var(--whatslink-border-radius);
+    padding: 15px;
+    display: none;
+}
+
+.whatslink-alert-header {
+    color: black;
+    font-weight: bold;
+    font-family: var(--whatslink-font-family);
+}
+
+#copy {
+    background-color: black;
+    border-radius: var(--whatslink-border-radius);
+}
+
+input.form:not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]) {
+    border-radius: var(--whatslink-border-radius) !important;
+}
+
+textarea.form {
+    border-radius: var(--whatslink-border-radius) !important;
 }
