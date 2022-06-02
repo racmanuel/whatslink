@@ -32,18 +32,49 @@
 	$(function () {
 		//Hide Elements
 		$('p.whatslink-phone-message').hide();
+
+		//Hide Alerts
+		$('#alert_phone_region_code').hide();
+		$('#alert_phone').hide();
+		$('#alert_greeting').hide();
+
 		//Initialize the jQuery Mask
 		$('#phone_region_code').mask('+00');
-		$('#phone').mask('(000) 000 0000');
+		$('#phone').mask('000 000 0000');
+
+		//Show alerts on Focus
+		$('#phone_region_code').focus(function () {
+			$(this).next("span").show().fadeOut(3000);
+		});
+
+		$('#phone').focus(function () {
+			$(this).next("span").show().fadeOut(3000);
+		});
+
+		$('alert_greeting').focus(function () {
+			;
+			$(this).next("span").show().fadeOut(3000);
+		});
 
 		//On Click in the Button of Generate Link
 		$('#generate-link').click(function () {
-			//Get the Values of the Fields
+
+			//Get the Values of the Fields to Generate a WhatsApp Link
 			var phone_code = $('#phone_region_code').val();
 			var phone = $('#phone').val();
+			var greetting = $('#gretting').val();
+
 			//Send to the Console.
-			console.log(phone_code + phone);
+			var phone_complete = phone_code + phone;
+
+			var whatsapp_number = phone_complete.replaceAll(/[^\p{L}\d\s@#]/u);
+
+			console.log(whatsapp_number);
+
+			$('.whatslink-alert').show();
 		});
+
+
 		$('#phone_region_code').keyup(function () {
 			$('span.phone_code').text($(this).val());
 		});
